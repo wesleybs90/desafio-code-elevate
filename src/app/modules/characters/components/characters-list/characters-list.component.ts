@@ -45,14 +45,6 @@ export class CharactersListComponent implements OnInit {
   // Get characters data from service
   getCharactersBySearchQuery(searchQuery: string) {
     return this.charactersService.getCharactersBySearchQuery(searchQuery);
-    // return this.charactersService.getCharactersBySearchQuery(searchQuery).pipe(
-    //   map((response: SwapiResponseInterface<CharacterInterface>) => {
-    //     this.totalItems = response.count;
-    //     this.nextPageUrl = response.next;
-    //     this.prevPageUrl = response.previous;
-    //     return response;
-    //   })
-    // );
   }
 
   getCharactersByUrl(pageUrl: string | null) {
@@ -60,24 +52,7 @@ export class CharactersListComponent implements OnInit {
       return;
     }
 
-    this.data$ = this.charactersService.getByUrl<CharacterInterface>(pageUrl);
-    // this.data$ = this.charactersService.getByUrl<CharacterInterface>(pageUrl).pipe(
-    //   map((response: SwapiResponseInterface<CharacterInterface>) => {
-    //     this.totalItems = response.count;
-    //     this.nextPageUrl = response.next;
-    //     this.prevPageUrl = response.previous;
-    //     return response;
-    //   }),
-    //   catchError(err => {
-    //     console.error('Failed to load characters', err);
-    //     return of({
-    //       count: 0,
-    //       next: null,
-    //       previous: null,
-    //       results: []
-    //     });
-    //   })
-    // );
+    this.data$ = this.charactersService.getCollectionByUrl<CharacterInterface>(pageUrl);
   }
 
   openCharacterModal(character: CharacterInterface) {

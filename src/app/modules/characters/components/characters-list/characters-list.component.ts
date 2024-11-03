@@ -56,7 +56,6 @@ export class CharactersListComponent implements OnInit {
   }
 
   openCharacterModal(character: CharacterInterface) {
-    console.log('Selected character:', character);
     this.selectedCharacter = character;
   }
 }

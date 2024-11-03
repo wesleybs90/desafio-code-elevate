@@ -1,0 +1,18 @@
+<div class="paginator__buttons">
+  <button
+    mat-flat-button
+    [disabled]="!prevPageUrl"
+    (click)="pageChange.emit(prevPageUrl)"
+  >
+    Previous
+  </button>
+  <button
+    mat-flat-button
+    [disabled]="!nextPageUrl"
+    (click)="pageChange.emit(nextPageUrl)"
+  >
+    Next
+  </button>
+</div>
+
+<p class="paginator__counter">Page {{ currentPage }} of {{ totalPages }}</p>

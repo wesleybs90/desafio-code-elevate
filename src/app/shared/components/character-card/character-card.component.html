@@ -1,0 +1,9 @@
+<mat-card
+  appearance="outlined"
+  class="card"
+  (click)="selectedCharacter.emit(character)"
+>
+  <mat-card-content class="card__content">{{
+    character.name
+  }}</mat-card-content>
+</mat-card>

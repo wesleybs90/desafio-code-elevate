@@ -10,16 +10,18 @@ import { CharactersService } from '../../services/characters.service';
 import { PaginatorComponent } from '../../../../shared/components/paginator/paginator.component';
 import { SwapiResponseInterface } from '../../interfaces/swapi-response.interface';
 import { CharacterModalComponent } from '../../../../shared/components/character-modal/character-modal.component';
+import { SearchBarComponent } from '../../../../shared/components/search-bar/search-bar.component';
 
 @Component({
   selector: 'app-characters-list',
   standalone: true,
   imports: [
     CommonModule,
-    MatProgressSpinnerModule,
     CharacterCardComponent,
-    PaginatorComponent,
     CharacterModalComponent,
+    MatProgressSpinnerModule,
+    PaginatorComponent,
+    SearchBarComponent,
   ],
   templateUrl: './characters-list.component.html',
   styleUrl: './characters-list.component.scss'

@@ -1,0 +1,29 @@
+.character-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.loading-image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 32rem;
+  min-height: 18rem;
+}
+
+.loading-planet-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+p {
+  margin: 0;
+  padding: 0.25rem 0;
+}
+
+span {
+  margin: 0;
+  font-weight: 500;
+}

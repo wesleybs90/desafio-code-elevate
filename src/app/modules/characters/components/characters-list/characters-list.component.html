@@ -1,0 +1,34 @@
+<h1>Star Wars Characters</h1>
+
+<ng-container *ngIf="data$ | async as data; else loading">
+  <div class="characters-list">
+    <app-character-card
+      *ngFor="let character of data.results"
+      [character]="character"
+      (selectedCharacter)="openCharacterModal($event)"
+    ></app-character-card>
+  </div>
+
+  <p *ngIf="data.results.length === 0" class="no-characters">
+    No characters found.
+  </p>
+
+  <app-paginator
+    *ngIf="data.results.length !== 0"
+    [totalItems]="data.count"
+    [prevPageUrl]="data.previous"
+    [nextPageUrl]="data.next"
+    (pageChange)="getCharactersByUrl($event)"
+  ></app-paginator>
+</ng-container>
+
+
+<ng-template #loading>
+  <mat-spinner class="spinner"></mat-spinner>
+</ng-template>
+
+<app-character-modal
+  *ngIf="!!selectedCharacter"
+  [character]="selectedCharacter"
+  (closeModal)="selectedCharacter = null"
+></app-character-modal>

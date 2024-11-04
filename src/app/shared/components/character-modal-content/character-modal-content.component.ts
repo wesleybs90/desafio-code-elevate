@@ -3,7 +3,7 @@ import { CharacterInterface } from '../../../modules/characters/interfaces/chara
 import { MAT_DIALOG_DATA, MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
 import { CharactersService } from '../../../modules/characters/services/characters.service';
-import { map, Observable } from 'rxjs';
+import { catchError, map, Observable } from 'rxjs';
 import { CommonModule } from '@angular/common';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { PlanetInterface } from '../../../modules/characters/interfaces/planet.interface';

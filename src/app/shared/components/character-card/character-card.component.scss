@@ -7,15 +7,15 @@
   margin: 0 auto;
   cursor: pointer;
   transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
 
   &:hover {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
     transform: translateY(-3px);
   }
 
   &:active {
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
     transform: translateY(0);
   }
 }

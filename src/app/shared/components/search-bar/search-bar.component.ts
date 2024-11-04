@@ -21,7 +21,7 @@ import { debounceTime } from 'rxjs';
   styleUrl: './search-bar.component.scss'
 })
 export class SearchBarComponent implements OnInit {
-  private searchService = inject(SearchService);
+  private readonly searchService = inject(SearchService);
 
   searchForm!: FormGroup;
 

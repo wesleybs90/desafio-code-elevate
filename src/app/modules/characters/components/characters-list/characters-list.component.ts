@@ -32,8 +32,8 @@ export class CharactersListComponent {
   // Obervable of characters data for async pipe on template
   protected data$!: Observable<SwapiResponseInterface<CharacterInterface> | null>;
 
-  private charactersService = inject(CharactersService);
-  private searchService = inject(SearchService);
+  private readonly charactersService = inject(CharactersService);
+  private readonly searchService = inject(SearchService);
   
   searchQuery: SearchQueryInterface = {
     name: '',

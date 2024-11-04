@@ -3,11 +3,12 @@ import { CharacterInterface } from '../../../modules/characters/interfaces/chara
 import { MAT_DIALOG_DATA, MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
 import { CharactersService } from '../../../modules/characters/services/characters.service';
-import { catchError, map, Observable } from 'rxjs';
+import { map, Observable } from 'rxjs';
 import { CommonModule } from '@angular/common';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { PlanetInterface } from '../../../modules/characters/interfaces/planet.interface';
 import { CmToMetersPipe } from '../../pipes/cm-to-meters.pipe';
+import { SwapiResourcesService } from '../../services/swapi-resources/swapi-resources.service';
 
 @Component({
   selector: 'app-character-modal-content',
@@ -29,6 +30,7 @@ export class CharacterModalContentComponent implements OnInit {
   protected planet$!: Observable<PlanetInterface>;
 
   private readonly charactersService = inject(CharactersService);
+  private readonly swapiResourcesService = inject(SwapiResourcesService);
 
   constructor(
     public dialogRef: MatDialogRef<CharacterModalContentComponent>,
@@ -59,6 +61,6 @@ export class CharacterModalContentComponent implements OnInit {
   }
 
   getCharacterPlanet(planetUrl: string): Observable<PlanetInterface> {
-    return this.charactersService.getOneByUrl<PlanetInterface>(planetUrl);
+    return this.swapiResourcesService.getOneByUrl<PlanetInterface>(planetUrl);
   }
 }

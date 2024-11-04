@@ -10,12 +10,14 @@ import { CharacterInterface } from '../../interfaces/character.interface';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { of } from 'rxjs';
 import { CharacterModalContentComponent } from '../../../../shared/components/character-modal-content/character-modal-content.component';
+import { SwapiResourcesService } from '../../../../shared/services/swapi-resources/swapi-resources.service';
 
 describe('CharactersListComponent', () => {
   let component: CharactersListComponent;
   let fixture: ComponentFixture<CharactersListComponent>;
   let dialog: MatDialog;
   let charactersService: CharactersService;
+  let swapiResourcesService: SwapiResourcesService;
   let searchService: SearchService;
 
   const mockCharacter: CharacterInterface = {
@@ -76,6 +78,7 @@ describe('CharactersListComponent', () => {
       ],
       providers: [
         CharactersService,
+        SwapiResourcesService,
         SearchService,
         provideHttpClient(),
         provideHttpClientTesting()
@@ -87,6 +90,7 @@ describe('CharactersListComponent', () => {
     component = fixture.componentInstance;
     dialog = TestBed.inject(MatDialog);
     charactersService = TestBed.inject(CharactersService);
+    swapiResourcesService = TestBed.inject(SwapiResourcesService);
     searchService = TestBed.inject(SearchService);
     fixture.detectChanges();
   });
@@ -100,7 +104,7 @@ describe('CharactersListComponent', () => {
       afterClosed: () => of(true)
     } as any);
 
-    spyOn(charactersService, 'getOneByUrl').and.returnValue(of(mockPlanet));
+    spyOn(swapiResourcesService, 'getOneByUrl').and.returnValue(of(mockPlanet));
     spyOn(charactersService, 'getCharacterPhotoByName').and.returnValue(of([mockCharacterPhoto]));
 
     component.openCharacterModal(mockCharacter);

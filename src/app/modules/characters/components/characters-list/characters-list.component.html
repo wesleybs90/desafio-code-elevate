@@ -1,4 +1,8 @@
-<h1>Star Wars Characters</h1>
+<h1>Star Wars API Viewer</h1>
+
+<app-search-bar></app-search-bar>
+
+<h2>Star Wars Characters</h2>
 
 <ng-container *ngIf="data$ | async as data; else loading">
   <div class="characters-list">

@@ -29,7 +29,7 @@ export class CharacterModalContentComponent implements OnInit {
   protected characterPhoto$!: Observable<string>;
   protected planet$!: Observable<PlanetInterface>;
 
-  private charactersService = inject(CharactersService);
+  private readonly charactersService = inject(CharactersService);
 
   constructor(
     public dialogRef: MatDialogRef<CharacterModalContentComponent>,

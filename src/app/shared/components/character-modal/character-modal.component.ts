@@ -15,7 +15,7 @@ export class CharacterModalComponent implements OnInit {
   @Input() character: CharacterInterface | null = null;
   @Output() closeModal = new EventEmitter<void>();
 
-  readonly dialog = inject(MatDialog);
+  private readonly dialog = inject(MatDialog);
 
   ngOnInit() {
     this.openDialog();

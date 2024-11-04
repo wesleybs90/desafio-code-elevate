@@ -21,7 +21,7 @@ export class AuthService {
   }
 
   logout(): void {
-    localStorage.removeItem(this.mockJWTToken);
+    localStorage.removeItem('token');
     this.isAuthenticatedSubject.next(false);
   }
 

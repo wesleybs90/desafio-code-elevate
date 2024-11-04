@@ -1,6 +1,9 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 
 import { CharacterModalContentComponent } from './character-modal-content.component';
+import { provideHttpClientTesting } from '@angular/common/http/testing';
+import { provideHttpClient } from '@angular/common/http';
 
 describe('CharacterModalContentComponent', () => {
   let component: CharacterModalContentComponent;
@@ -8,7 +11,13 @@ describe('CharacterModalContentComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [CharacterModalContentComponent]
+      imports: [],
+      providers: [
+        { provide: MatDialogRef, useValue: {} },
+        { provide: MAT_DIALOG_DATA, useValue: {} },
+        provideHttpClient(),
+        provideHttpClientTesting() 
+      ]
     })
     .compileComponents();
 

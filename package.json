@@ -7,7 +7,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:desafio-code-elevate": "node dist/desafio-code-elevate/server/server.mjs"
+    "serve:ssr": "node dist/server/server.mjs"
   },
   "private": true,
   "dependencies": {

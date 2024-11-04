@@ -2,6 +2,7 @@ import { Component, inject } from '@angular/core';
 import { Router, RouterOutlet } from '@angular/router';
 import { LogoutComponent } from './modules/auth/components/logout/logout.component';
 import { CommonModule } from '@angular/common';
+import { AlertToastComponent } from './shared/components/alert-toast/alert-toast.component';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +10,8 @@ import { CommonModule } from '@angular/common';
   imports: [
     CommonModule,
     RouterOutlet,
-    LogoutComponent
+    LogoutComponent,
+    AlertToastComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'

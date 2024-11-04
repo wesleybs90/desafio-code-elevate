@@ -9,10 +9,11 @@ import { CharacterInterface } from '../../interfaces/character.interface';
 import { CharactersService } from '../../services/characters.service';
 import { PaginatorComponent } from '../../../../shared/components/paginator/paginator.component';
 import { SwapiResponseInterface } from '../../interfaces/swapi-response.interface';
-import { CharacterModalComponent } from '../../../../shared/components/character-modal/character-modal.component';
 import { SearchBarComponent } from '../../../../shared/components/search-bar/search-bar.component';
 import { SearchService } from '../../../../shared/services/search/search.service';
 import { SearchQueryInterface } from '../../../../shared/interfaces/search-query.interface';
+import { MatDialog } from '@angular/material/dialog';
+import { CharacterModalContentComponent } from '../../../../shared/components/character-modal-content/character-modal-content.component';
 
 @Component({
   selector: 'app-characters-list',
@@ -20,7 +21,6 @@ import { SearchQueryInterface } from '../../../../shared/interfaces/search-query
   imports: [
     CommonModule,
     CharacterCardComponent,
-    CharacterModalComponent,
     MatProgressSpinnerModule,
     PaginatorComponent,
     SearchBarComponent,
@@ -34,6 +34,7 @@ export class CharactersListComponent {
 
   private readonly charactersService = inject(CharactersService);
   private readonly searchService = inject(SearchService);
+  private readonly dialog = inject(MatDialog);
   
   searchQuery: SearchQueryInterface = {
     name: '',
@@ -70,6 +71,12 @@ export class CharactersListComponent {
   }
 
   openCharacterModal(character: CharacterInterface) {
-    this.selectedCharacter = character;
+    const dialogRef = this.dialog.open(CharacterModalContentComponent, {
+      data: character
+    });
+
+    dialogRef.afterClosed().subscribe(() => {
+      this.selectedCharacter = null;
+    });
   }
 }

@@ -6,6 +6,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class CmToMetersPipe implements PipeTransform {
 
+  // Convert centimeters to meters
   transform(value: number | string | undefined): string {
     if (!value) {
       return '-';

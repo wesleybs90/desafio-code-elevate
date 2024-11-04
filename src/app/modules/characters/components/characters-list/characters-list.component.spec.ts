@@ -9,7 +9,6 @@ import { provideHttpClient } from '@angular/common/http';
 import { CharacterInterface } from '../../interfaces/character.interface';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { of } from 'rxjs';
-import { CharacterModalComponent } from '../../../../shared/components/character-modal/character-modal.component';
 import { CharacterModalContentComponent } from '../../../../shared/components/character-modal-content/character-modal-content.component';
 
 describe('CharactersListComponent', () => {
@@ -106,7 +105,7 @@ describe('CharactersListComponent', () => {
 
     component.openCharacterModal(mockCharacter);
 
-    const dialogRef = dialog.open(CharacterModalComponent, {
+    const dialogRef = dialog.open(CharacterModalContentComponent, {
       data: mockCharacter
     });
 

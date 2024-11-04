@@ -21,13 +21,10 @@ import { debounceTime } from 'rxjs';
   styleUrl: './search-bar.component.scss'
 })
 export class SearchBarComponent implements OnInit {
-  private readonly searchService = inject(SearchService);
-
   searchForm!: FormGroup;
 
-  constructor(
-    private readonly fb: FormBuilder,
-  ) { }
+  private readonly searchService = inject(SearchService);
+  private readonly fb = inject(FormBuilder);
 
   ngOnInit() {
     this.buildForm();

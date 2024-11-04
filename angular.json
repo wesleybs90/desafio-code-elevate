@@ -1,9 +1,6 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
-  "cli": {
-    "packageManager": "npm"
-  },
   "newProjectRoot": "projects",
   "projects": {
     "desafio-code-elevate": {
@@ -20,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist",
+            "outputPath": "dist/desafio-code-elevate",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -33,8 +30,7 @@
               {
                 "glob": "**/*",
                 "input": "public"
-              },
-              "src/_routes.json"
+              }
             ],
             "styles": [
               "@angular/material/prebuilt-themes/cyan-orange.css",

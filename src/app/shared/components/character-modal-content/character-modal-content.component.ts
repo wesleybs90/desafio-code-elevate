@@ -4,7 +4,6 @@ import { MAT_DIALOG_DATA, MatDialogModule, MatDialogRef } from '@angular/materia
 import { MatButtonModule } from '@angular/material/button';
 import { CharactersService } from '../../../modules/characters/services/characters.service';
 import { map, Observable } from 'rxjs';
-import { SwDataBankResponseInterface } from '../../../modules/characters/interfaces/sw-data-bank-response.interface';
 import { CommonModule } from '@angular/common';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { PlanetInterface } from '../../../modules/characters/interfaces/planet.interface';

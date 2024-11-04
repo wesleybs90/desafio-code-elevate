@@ -4,6 +4,6 @@
   (click)="selectedCharacter.emit(character)"
 >
   <mat-card-content class="card__content">{{
-    character.name
+    character?.name || "-"
   }}</mat-card-content>
 </mat-card>

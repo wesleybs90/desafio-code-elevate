@@ -1,0 +1,2 @@
+<span *ngIf="!(isLoggedIn$ | async) && !isLoginRoute()">Logged in</span>
+<button mat-stroked-button *ngIf="!(isLoggedIn$ | async) && !isLoginRoute()" (click)="onLogout()">Logout</button>

@@ -25,11 +25,16 @@ export class AuthService {
     this.isAuthenticatedSubject.next(false);
   }
 
-  isLoggedIn(): boolean {
-    return !!localStorage.getItem('token');
+  // Simulate token validation
+  isTokenValid(): boolean {
+    return true;
   }
 
-  isAuthenticated(): boolean {
-    return this.isAuthenticatedSubject.getValue();
+  isLoggedIn(): boolean {
+    if (typeof localStorage === 'undefined') {
+      return false;
+    }
+    return !!localStorage.getItem('token') && this.isTokenValid();
   }
+
 }

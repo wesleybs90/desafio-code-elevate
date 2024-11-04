@@ -1,27 +1,81 @@
-# DesafioCodeElevate
+# Desafio Code Elevate - Frontend - SWAPI
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.10.
+Repositório com a solução em frontend Angular do desafio da Code Elevate.
 
-## Development server
+Projeto desenvolvido utilizando:
+- Angular 18
+- Angular Material para a interface.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Instalação e configuração
 
-## Code scaffolding
+Para instalar o projeto, é necessário ter o Node.js na versão 18.20 ou maior (recomendado utilizar NVS/NVM) e o Angular CLI instalados. Para instalar o Angular CLI, execute o comando abaixo:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+```bash
+npm install -g @angular/cli
+```
 
-## Build
+Após a instalação do Angular CLI, clone o repositório e execute o comando abaixo para instalar as dependências do projeto:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+```bash
+npm install
+```
 
-## Running unit tests
+## Execução do projeto como produção
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Para executar o projeto como produção, execute o comando abaixo para fazer o build:
 
-## Running end-to-end tests
+```bash
+npm run build
+```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+ou
 
-## Further help
+```bash
+ng build
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Após a execução do comando, será gerado a pasta `dist/` com os arquivos de produção. Para executar o projeto, execute o comando abaixo:
+
+```bash
+npm run serve:ssr
+```
+
+ou
+
+```bash
+node dist/server/server.mjs
+```
+
+Após a execução do comando, navegue para `http://localhost:4000/`.
+
+### Usuário padrão para autenticação
+- Usuário padrão: `user`
+- Senha padrão: `pass`
+
+## Execução do projeto como desenvolvimento
+
+Para executar o projeto, execute o comando abaixo:
+
+```bash
+npm run start
+```
+
+ou
+
+```bash
+ng serve
+```
+
+Após a execução do comando, navegue para `http://localhost:4200/`.
+
+### Usuário padrão para autenticação
+- Usuário padrão: `user`
+- Senha padrão: `pass`
+
+## Execução de testes unitários
+
+Para executar os testes unitários, execute o comando abaixo:
+
+```bash
+npm run test
+```

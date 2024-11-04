@@ -1,1 +1,43 @@
-<p>search-bar works!</p>
+<form class="form" [formGroup]="searchForm">
+  <div>
+    <mat-form-field class="form__input">
+      <mat-label>Search Character</mat-label>
+      <input
+        matInput
+        placeholder="Ex. Yoda"
+        formControlName="name"
+      />
+    </mat-form-field>
+  </div>
+
+  <p>Filters:</p>
+
+  <div class="form__filters">
+    <mat-form-field class="form__input">
+      <mat-label>Homeworld</mat-label>
+      <input
+        matInput
+        placeholder="Ex. Tatooine"
+        formControlName="homeworld"
+      />
+    </mat-form-field>
+
+    <mat-form-field class="form__input">
+      <mat-label>Starships</mat-label>
+      <input
+        matInput
+        placeholder="Ex. X-wing"
+        formControlName="starships"
+      />
+    </mat-form-field>
+
+    <mat-form-field class="form__input">
+      <mat-label>Species</mat-label>
+      <input
+        matInput
+        placeholder="Ex. Droid"
+        formControlName="species"
+      />
+    </mat-form-field>
+  </div>
+</form>

@@ -1,0 +1,10 @@
+<div *ngIf="alertToast$ | async as alertToast" class="alert">
+  <div *ngIf="alertToast.isOpen" class="alert__content">
+    <p>
+      {{ alertToast.message }}
+    </p>
+    <button mat-flat-button (click)="closeAlertToast()">
+      Close
+    </button>
+  </div>
+</div>
